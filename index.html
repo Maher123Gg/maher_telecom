@@ -1,40 +1,210 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MHR TECH | مركز الاتصالات والتكنولوجيا المتكامل</title>
-  <meta name="description" content="الحلول المتكاملة للاتصالات، الخدمات المالية، صيانة الأجهزة والحلول الرقمية في حمص. مركز الاتصالات والتكنولوجيا المتكامل - ماهر عودة للاتصالات.">
-  <link rel="icon" href="favicon.ico"><!-- أضف favicon عند الحاجة -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#2d5a7d',
-            secondary: '#4a7c9b',
-            accent: '#6ba3a8',
-            light: '#f5f7fa',
-            dark: '#1a3a4a',
-            muted: '#6b7c8c',
-            warm: '#d4a574'
-          },
-          fontFamily: {
-            sans: ['Cairo', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <title>MHR_TECH | خدمات فاخرة</title>
+  <link href="https://fonts.googleapis.com/css?family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(107, 163, 168, 0.2); box-shadow: 0 4px 20px rgba(45, 90, 125, 0.08); } .gradient-text { background: linear-gradient(135deg, #2d5a7d 0%, #6ba3a8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; } .btn-primary { background: linear-gradient(135deg, #2d5a7d 0%, #4a7c9b 100%); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); } .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(45, 90, 125, 0.25); } .btn-secondary { background: transparent; border: 2px solid #2d5a7d; color: #2d5a7d; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); } .btn-secondary:hover { background: #2d5a7d; color: white; } .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(30px); } @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } } .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); } .hover-lift:hover { transform: translateY(-8px); } .section-divider { width: 60px; height: 3px; background: linear-gradient(90deg, #2d5a7d, #6ba3a8); margin: 0 auto; } .modal-overlay { opacity: 0; visibility: hidden; transition: all 0.3s ease; } .modal-overlay.active { opacity: 1; visibility: visible; } .modal-content { transform: scale(0.9) translateY(20px); transition: all 0.3s ease; } .modal-overlay.active .modal-content { transform: scale(1) translateY(0); } .service-option { transition: all 0.2s ease; } .service-option:hover { background: linear-gradient(135deg, #2d5a7d 0%, #4a7c9b 100%); color: white; transform: translateX(-5px); } .service-option.selected { background: linear-gradient(135deg, #2d5a7d 0%, #4a7c9b 100%); color: white; } .service-option:hover .text-muted, .service-option.selected .text-muted { color: rgba(255,255,255,0.8); } .service-option:hover .check-icon, .service-option.selected .check-icon { border-color: white; background: white; } .service-option:hover .check-icon svg, .service-option.selected .check-icon svg { opacity: 1; } .sub-option { transition: all 0.2s ease; } .sub-option:hover { background: #f0f4f8; } .sub-option.selected { background: linear-gradient(135deg, #2d5a7d 0%, #4a7c9b 100%); color: white; } .sub-option.selected .text-muted { color: rgba(255,255,255,0.8); } .icon-box { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    body {margin:0; font-family:'Tajawal',Arial,sans-serif; background: #15101f;}
+    /* شريط التنقل */
+    nav {position:sticky;top:0;z-index:1000;background:rgba(16, 5, 40, 0.97);display:flex;justify-content:space-between;align-items:center;padding:1.2em 3vw;border-bottom:3px solid gold; box-shadow:0 2px 40px #0004;}
+    nav .logo {font-size:2em;font-weight:900;color:gold;letter-spacing:2.4px;}
+    nav ul {display:flex;gap:2.1em;margin:0;padding:0;list-style:none;}
+    nav ul li a {color:#fff;text-decoration:none;font-weight:bold;font-size:1.1em;transition:color .12s;}
+    nav ul li a:hover {color:gold;}
+    .hero {padding:5em 2em 2em 2em;text-align:center;background:linear-gradient(117deg,#1e0948 60%,#870877 100%);}
+    .hero h1 {font-size:3em;color:gold;font-weight:900;margin-bottom:0.3em;letter-spacing:2px; text-shadow:0 4px 40px #0008;}
+    .hero p{font-size:1.4em;color:#ffe7fa;font-weight:700;max-width:850px;margin:0 auto 1.7em;}
+    .lux-btn{ background:linear-gradient(92deg,#fed700,#be2fff);color:#170256;font-weight:900;font-size:1.18em;border:none;outline:none;padding:.9em 2.7em;border-radius:2em;box-shadow:0 12px 32px #10001230;cursor:pointer;transition:box-shadow .12s;}
+    .lux-btn:hover{box-shadow:0 6px 12px #fae6e340;}
+    /* استبيان */
+    .survey-section {background:#1e1e36;padding:2.2em 1em 2.8em 1em;margin:2em auto 3.6em auto;max-width:470px;border-radius:2.2em;box-shadow:0 0 26px #fed70055;}
+    .survey-section h2{color:gold;font-weight:bold;font-size:1.35em;}
+    .survey-section label {display:block;margin:1.1em .1em .6em 0;color:#fff;font-size:1.13em;}
+    .survey-section input[type=text], .survey-section select {width:100%;padding:.7em;border-radius:.9em;border:2px solid #be2fff;background:#2d2748;color:#fff;font-size:1em;}
+    .survey-section button {margin-top:1.1em;}
+    .survey-success {display:none;background:#eaeac1;color:#408b1a;padding:1em 0;border-radius:1.3em;font-weight:bold;text-align:center;font-size:1.05em;}
+    /* --- أقسام الخدمات الرئيسية --- */
+    .sec-title{color:gold;font-size:2em;font-weight:bold;text-align:center;margin:3.5em 0 1.2em 0;letter-spacing:2px;}
+    .main-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:2em;max-width:1400px;margin:0 auto 4em auto;padding:0 2vw;}
+    .service-group{background:linear-gradient(100deg,#241445 0,#b49ac5 100%);border-radius:2em;box-shadow:0 8px 32px #0004;padding:2.3em 1.6em 1.3em 1.6em;}
+    .service-group h3{color:gold;font-size:1.4em;font-weight:bold;margin-bottom:.7em;}
+    .group-items{display:grid;grid-template-columns:1fr 1fr;gap:1em;}
+    .group-item{background:#fff5;border-radius:1.1em;padding:.7em .6em;color:#170256;font-weight:900;display:flex;align-items:center;gap:.7em;box-shadow:0 4px 20px #0002;transition:background .16s,transform .09s;}
+    .group-item:hover{background:#fed70099;transform:scale(1.025);}
+    .group-item svg{flex:0 0 26px;width:26px;height:26px;}
+    /* من نحن */
+    .about-section {background:linear-gradient(91deg,#30205e,#975211 95%);margin:4em 0 3em 0;padding:3em 1.2em;border-radius:2.5em;max-width:900px;text-align:center;box-shadow:0 6px 40px #c4930f33;}
+    .about-section h2 {color:gold;font-weight:bold;font-size:2em;margin-bottom:.86em;}
+    .about-section p{color:#fffbe0;font-size:1.23em;font-weight:700;max-width:700px;margin:auto;}
+    /* آراء العملاء */
+    .feedback-section{margin:4em auto 4em auto;max-width:1400px;}
+    .feedback-section h2{color:gold;text-align:center;margin-bottom:2.2em;}
+    .feedback-cards{display:flex;gap:2em;flex-wrap:wrap;justify-content:center;}
+    .feedback-card{background:#222248;box-shadow:0 2px 24px #fed70022;border-radius:1.5em;padding:2em 1em;width:350px;max-width:95vw;margin-bottom:2em;}
+    .feedback-card .stars{color:gold;font-size:1.16em;margin-bottom:.67em;}
+    .feedback-card p{color:#fffbe0;font-weight:bold;}
+    .feedback-card .name{margin-top:1.3em;color:#e3e3e3;font-weight:900;}
+    /* Footer */
+    footer{background:#120933;margin-top:5em;color:#ffeedd;font-weight:bold;text-align:center;padding:2.2em 0;font-size:1.08em;letter-spacing:1.2px;border-top:3px solid gold;}
+    /* Responsive */
+    @media(max-width:750px){nav{flex-direction:column;gap:.8em;} .main-sections{grid-template-columns:1fr;} .group-items{grid-template-columns:1fr;} }
   </style>
 </head>
-<body class="bg-light text-dark font-sans antialiased overflow-x-hidden">
-<!-- بقية محتوى الصفحة (لم يتغير عن كودك السابق) -->
-<!-- ... كل أكواد HTML بالضبط كما في ملفك المرسل ... -->
-<script> ... هنا كود الجافاسكريبت المنسوخ من ملفك ... </script>
+<body>
+  <!-- 1. شريط التنقل -->
+  <nav>
+    <div class="logo">MHR_TECH</div>
+    <ul>
+      <li><a href="#apps">تطبيقات الدردشة</a></li>
+      <li><a href="#games">الألعاب</a></li>
+      <li><a href="#currencies">العملات</a></li>
+      <li><a href="#mobiles">الجوالات</a></li>
+      <li><a href="#fix">الصيانة</a></li>
+      <li><a href="#about">من نحن</a></li>
+      <li><a href="#feedback">آراء العملاء</a></li>
+    </ul>
+  </nav>
+  <!-- 2. واجهة ترحيبية عصرية -->
+  <div class="hero">
+    <h1>مرحباً بك في MHR_TECH</h1>
+    <p>كل خدمات الشحن والتطبيقات والألعاب والعملات والجوالات والصيانة في مكان واحد وبفخامة مواقع الشركات الكبرى.<br>
+    خيارات مذهلة، سرعة، دعم 24/7، أسعار منافسة، امتياز الضمان!</p>
+    <button class="lux-btn" onclick="document.getElementById('survey').scrollIntoView({behavior:'smooth'});">ابدأ معنا</button>
+  </div>
+  <!-- 3. استبيان (بسيط) -->
+  <section class="survey-section" id="survey">
+    <h2>استبيان قصير لتقديم أفضل خدمة</h2>
+    <form id="surveyForm" onsubmit="return surveySubmit(event)">
+      <label for="usage">ما أكثر خدمة تحتاجها؟</label>
+      <select id="usage" name="usage" required>
+        <option value="" disabled selected>اختر...</option>
+        <option value="شحن تطبيقات">شحن تطبيقات دردشة</option>
+        <option value="شحن ألعاب">شحن ألعاب</option>
+        <option value="شحن عملات">شحن عملات</option>
+        <option value="شراء جوالات">شراء جوالات</option>
+        <option value="صيانة">صيانة</option>
+        <option value="تصريف عملات">تصريف عملات</option>
+      </select>
+      <label for="opinion">رأيك بتجربتك أو اقتراحك (اختياري)</label>
+      <input type="text" id="opinion" name="opinion" placeholder="أكتب لنا أي ملاحظات أو اقتراح...">
+      <button type="submit" class="lux-btn">إرسال</button>
+      <div class="survey-success" id="survey-success-msg">شكراً لمشاركتك سنعمل على تطوير الخدمة دائماً!</div>
+    </form>
+  </section>
+  <!-- 4. أقسام الخدمات الرئيسية -->
+  <div class="sec-title" id="apps">تطبيقات الدردشة</div>
+  <div class="main-sections">
+    <div class="service-group">
+      <h3>تطبيقات الشحن:</h3>
+      <div class="group-items">
+        <div class="group-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#cfdbfd"/><text x="44%" y="58%" font-size="10" text-anchor="middle" fill="#7865e8">دانا</text></svg> الدانا</div>
+        <div class="group-item"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="7" fill="#ffbf00"/><text x="50%" y="58%" font-size="10" text-anchor="middle" fill="#8a5a11">سول ستار</text></svg> سول ستار</div>
+        <div class="group-item"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="8"/><text x="48%" y="58%" font-size="10" text-anchor="middle" fill="#a60558">وياك</text></svg> وياك</div>
+        <div class="group-item"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="7" fill="#53c1f9"/><text x="50%" y="58%" font-size="10" text-anchor="middle" fill="#085587">بيجو لايف</text></svg> بيجو لايف</div>
+        <div class="group-item"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="7" fill="#018c77"/><text x="54%" y="58%" font-size="10" text-anchor="middle" fill="#fff">هايك</text></svg> هايك</div>
+        <!-- أضف المزيد -->
+      </div>
+    </div>
+  </div>
+  <div class="sec-title" id="games">الألعاب</div>
+  <div class="main-sections">
+    <div class="service-group">
+      <h3>ألعاب الشحن:</h3>
+      <div class="group-items">
+        <div class="group-item"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffe5d9"/><text x="50%" y="58%" font-size="10" text-anchor="middle" fill="#e96b36">ببجي</text></svg> ببجي</div>
+        <div class="group-item"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="10" fill="#aeffe5"/><text x="50%" y="58%" font-size="10" text-anchor="middle" fill="#14bfa5">فري فاير</text></svg> فري فاير</div>
+        <div class="group-item"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffdf70"/><text x="50%" y="58%" font-size="8" text-anchor="middle" fill="#b39c00">كول اوف ديوتي</text></svg> كول أوف ديوتي</div>
+        <!-- أضف المزيد -->
+      </div>
+    </div>
+  </div>
+  <div class="sec-title" id="currencies">العملات</div>
+  <div class="main-sections">
+    <div class="service-group">
+      <h3>شحن وصرف العملات:</h3>
+      <div class="group-items">
+        <div class="group-item">💵 دولار أمريكي</div>
+        <div class="group-item">💶 يورو</div>
+        <div class="group-item">🇸🇾 ليرة سورية</div>
+      </div>
+    </div>
+    <div class="service-group">
+      <h3>تصريف العملات</h3>
+      <div class="group-items">
+        <div class="group-item">💱 تصريف فوري</div>
+        <div class="group-item">🔄 أسعار محدثة</div>
+        <!-- أضف المزيد -->
+      </div>
+    </div>
+  </div>
+  <div class="sec-title" id="mobiles">الجوالات</div>
+  <div class="main-sections">
+    <div class="service-group">
+      <h3>خدمات الجوالات:</h3>
+      <div class="group-items">
+        <div class="group-item">📱 أجهزة جديدة</div>
+        <div class="group-item">📦 كفرات وحمايات</div>
+        <div class="group-item">🛠️ صيانة الجوالات</div>
+        <!-- أضف المزيد -->
+      </div>
+    </div>
+  </div>
+  <div class="sec-title" id="fix">الصيانة والصيانة الفورية</div>
+  <div class="main-sections">
+    <div class="service-group">
+      <h3>الصيانة الفاخرة</h3>
+      <div class="group-items">
+        <div class="group-item">🛠️ صيانة شاملة</div>
+        <div class="group-item">⚡ صيانة فورية</div>
+        <div class="group-item">🔌 بطاريات وشاشات أصلية</div>
+        <div class="group-item">👨‍🔧 فحص مجاني</div>
+      </div>
+    </div>
+  </div>
+  <!-- 5. من نحن -->
+  <section class="about-section" id="about">
+    <h2>من نحن</h2>
+    <p>
+      MHR_TECH هي منصة رائدة بخدمات الشحن والتطبيقات والألعاب والعملات والصيانة الشاملة في سوريا والمنطقة.  
+      نهدف لتوفير أفضل تجربة للعملاء مع ضمان أمان وشفافية وسرعة.  
+      خبرة سنوات وجودة عالمية ودعم على مدار الساعة. جربنا الآن!
+    </p>
+  </section>
+  <!-- 6. آراء العملاء -->
+  <section class="feedback-section" id="feedback">
+    <h2>آراء عملائنا</h2>
+    <div class="feedback-cards">
+      <div class="feedback-card">
+        <div class="stars">★★★★★</div>
+        <p>سرعة خرافية وأسعار ممتازة والتواصل راقي جداً. شكراً MHR_TECH.</p>
+        <div class="name">- محمد من دمشق</div>
+      </div>
+      <div class="feedback-card">
+        <div class="stars">★★★★★</div>
+        <p>صيانة جوالي كانت فورية وباحتراف... وأنصح كل من يريد شحن ببجي يتعامل معهم 👍</p>
+        <div class="name">- أحمد الحلبي</div>
+      </div>
+      <div class="feedback-card">
+        <div class="stars">★★★★★</div>
+        <p>خدمة العملاء رائعة ومتجاوبة! ووسائل الدفع كثيرة وسهلة.</p>
+        <div class="name">- يارا - حماة</div>
+      </div>
+      <!-- أضف المزيد من آراء العملاء حسب الحاجة -->
+    </div>
+  </section>
+  <footer>
+    &copy; <span id="year"></span> جميع الحقوق محفوظة لـ <b>MHR_TECH</b> | للتواصل واتساب <a style="color:gold" href="https://wa.me/963992511143" target="_blank">+963992511143</a>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function surveySubmit(ev){
+      ev.preventDefault();
+      document.getElementById("survey-success-msg").style.display="block";
+      setTimeout(()=>{document.getElementById("survey-success-msg").style.display="none";document.getElementById("surveyForm").reset();},2400);
+      return false;
+    }
+  </script>
 </body>
 </html>
