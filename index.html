@@ -1,118 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="utf-8" />
-  <title>ماهر للإتصالات - طلب شحن رصيد</title>
-  <style>
-    body { font-family: "Tajawal", sans-serif; background:#f4f4f4; padding:20px; }
-    .card { background:#fff; padding:20px; border-radius:10px; max-width:420px; margin:auto; box-shadow:0 2px 8px rgba(0,0,0,.1); }
-    header { text-align:center; margin-bottom:20px; }
-    header h1 { margin:0; font-size:1.6rem; color:#22c55e; }
-    label { display:block; margin-bottom:6px; font-weight:bold; }
-    input, select, button { padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:6px; }
-    .row { display:flex; gap:8px; }
-    .row input { flex:1; }
-    .row select { width:90px; order:2; }
-    button { background:#22c55e; color:#fff; border:none; cursor:pointer; width:100%; }
-    button:hover { background:#16a34a; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اقتباسات يومي - تطبيق الاقتباسات العربية</title>
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- خطوط Google وأيقونات Font Awesome (تبقى في HTML لأنها روابط خارجية) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="card">
-    <header>
-      <h1>ماهر للإتصالات</h1>
-      <p>خدمة شحن الرصيد عبر الإنترنت</p>
-    </header>
+    <div class="container">
+        <h1><i class="fas fa-quote-right" style="color: #3498db;"></i> اقتباسات يومي</h1>
+        <div class="subtitle">حكم وأقوال تلهم يومك</div>
 
-    <form id="rechargeForm">
-      <label for="fullName">الاسم الكامل</label>
-      <input id="fullName" type="text" required style="width:100%;" />
+        <div class="quote-box">
+            <i class="fas fa-quote-right quote-icon"></i>
+            <div class="quote-text" id="quote">اضغط على الزر للحصول على اقتباس</div>
+            <div class="quote-author" id="author"></div>
+            <i class="fas fa-quote-right quote-icon left"></i>
+        </div>
 
-      <label>رقم الهاتف</label>
-      <div class="row">
-        <input id="phoneRest" type="tel" placeholder="أدخل بقية الرقم" required style="flex:1;" />
-        <select id="prefix" required>
-          <option value="">اختر</option>
-          <option value="093">093</option>
-          <option value="094">094</option>
-          <option value="095">095</option>
-          <option value="096">096</option>
-          <option value="097">097</option>
-          <option value="098">098</option>
-          <option value="099">099</option>
-        </select>
-      </div>
+        <button class="new-quote-btn" onclick="showNewQuote()">
+            <i class="fas fa-sync-alt"></i> اقتباس جديد
+        </button>
 
-      <label for="carrier">شركة الاتصالات</label>
-      <select id="carrier" required style="width:100%;">
-        <option value="">اختر الشركة</option>
-        <option value="Syriatel">سيرياتيل</option>
-        <option value="MTN">MTN</option>
-      </select>
+        <div class="counter" id="counter"></div>
 
-      <label for="amount">المبلغ المطلوب (ل.س)</label>
-      <input id="amount" type="number" min="1000" step="500" required style="width:100%;" />
+        <div class="footer">
+            <i class="fas fa-heart" style="color: #e74c3c;"></i> اقتباسات عربية ملهمة
+        </div>
+    </div>
 
-      <label for="amountDue">المبلغ المستحق (ل.س)</label>
-      <input id="amountDue" type="number" readonly style="width:100%;" />
-
-      <button type="submit">إرسال الطلب على واتساب</button>
-    </form>
-  </div>
-
-  <script>
-    const amountInput = document.getElementById("amount");
-    const amountDue = document.getElementById("amountDue");
-    const prefixSelect = document.getElementById("prefix");
-    const carrierSelect = document.getElementById("carrier");
-
-    // حساب المبلغ المستحق = المطلوب × 1.2
-    amountInput.addEventListener("input", () => {
-      const val = parseFloat(amountInput.value);
-      if (!isNaN(val)) {
-        amountDue.value = (val * 1.2).toFixed(0);
-      } else {
-        amountDue.value = "";
-      }
-    });
-
-    // عند إدخال المبلغ المستحق → حساب المطلوب
-    amountDue.addEventListener("input", () => {
-      const val = parseFloat(amountDue.value);
-      if (!isNaN(val)) {
-        amountInput.value = (val / 1.2).toFixed(0);
-      } else {
-        amountInput.value = "";
-      }
-    });
-
-    // اختيار الشركة تلقائياً حسب المقدمة
-    prefixSelect.addEventListener("change", () => {
-      const prefix = prefixSelect.value;
-      if (prefix === "099" || prefix === "098" || prefix === "093") {
-        carrierSelect.value = "Syriatel";
-      } else if (prefix) {
-        carrierSelect.value = "MTN";
-      } else {
-        carrierSelect.value = "";
-      }
-    });
-
-    document.getElementById("rechargeForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = document.getElementById("fullName").value;
-      const prefix = prefixSelect.value;
-      const phoneRest = document.getElementById("phoneRest").value;
-      const phone = prefix + phoneRest;
-      const carrier = carrierSelect.value;
-      const amount = amountInput.value;
-      const total = amountDue.value;
-
-      const message = `طلب شحن رصيد - ماهر للإتصالات:\nالاسم: ${name}\nالرقم: ${phone}\nالشركة: ${carrier}\nالمبلغ المطلوب: ${amount} ل.س\nالمبلغ المستحق: ${total} ل.س`;
-      const encoded = encodeURIComponent(message);
-      const waLink = `https://wa.me/963992511143?text=${encoded}`;
-      window.open(waLink, "_blank");
-    });
-  </script>
+    <!-- ربط ملف JavaScript (يُفضل وضعه في نهاية الجسم قبل إغلاق body) -->
+    <script src="script.js"></script>
 </body>
 </html>

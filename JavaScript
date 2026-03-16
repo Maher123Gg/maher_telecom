@@ -1,0 +1,102 @@
+// قائمة الاقتباسات
+const quotes = [
+    {
+        text: "إن مع العسر يسرا",
+        author: "القرآن الكريم (سورة الشرح)"
+    },
+    {
+        text: "من جد وجد ومن زرع حصد",
+        author: "مثل عربي"
+    },
+    {
+        text: "العلم نور والجهل ظلام",
+        author: "مثل عربي"
+    },
+    {
+        text: "ليس الفتى من قال كان أبوه، ولكن الفتى من قال ها أنا ذا",
+        author: "أبو الطيب المتنبي"
+    },
+    {
+        text: "إذا لم تستح فاصنع ما شئت",
+        author: "حديث نبوي"
+    },
+    {
+        text: "تفاءلوا بالخير تجدوه",
+        author: "حديث نبوي"
+    },
+    {
+        text: "أعقل الناس أعذرهم للناس",
+        author: "الإمام علي بن أبي طالب"
+    },
+    {
+        text: "من طلب العلا سهر الليالي",
+        author: "مثل عربي"
+    },
+    {
+        text: "لا تؤجل عمل اليوم إلى الغد",
+        author: "مثل عربي"
+    },
+    {
+        text: "الصبر مفتاح الفرج",
+        author: "مثل عربي"
+    },
+    {
+        text: "رب ضارة نافعة",
+        author: "مثل عربي"
+    },
+    {
+        text: "لكل مقام مقال",
+        author: "مثل عربي"
+    },
+    {
+        text: "في التأني السلامة وفي العجلة الندامة",
+        author: "مثل عربي"
+    },
+    {
+        text: "من توكل على الله فهو حسبه",
+        author: "القرآن الكريم"
+    },
+    {
+        text: "وأحسن كما أحسن الله إليك",
+        author: "القرآن الكريم"
+    }
+];
+
+// العناصر
+const quoteElement = document.getElementById('quote');
+const authorElement = document.getElementById('author');
+const counterElement = document.getElementById('counter');
+let lastIndex = -1;
+
+// دالة تحديث العداد
+function updateCounter() {
+    counterElement.textContent = `📚 ${quotes.length} اقتباس ملهم`;
+}
+
+// دالة عرض اقتباس جديد (معرّضة للعالمي لتعمل من onclick في HTML)
+window.showNewQuote = function() {
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * quotes.length);
+    } while (randomIndex === lastIndex && quotes.length > 1);
+    
+    lastIndex = randomIndex;
+    const quote = quotes[randomIndex];
+    
+    // تأثير fade
+    quoteElement.style.opacity = 0;
+    authorElement.style.opacity = 0;
+    
+    setTimeout(() => {
+        quoteElement.textContent = quote.text;
+        authorElement.textContent = quote.author || "مجهول";
+        quoteElement.style.opacity = 1;
+        authorElement.style.opacity = 1;
+    }, 200);
+};
+
+// بدء التشغيل
+window.onload = function() {
+    updateCounter();
+    window.showNewQuote();
+};
